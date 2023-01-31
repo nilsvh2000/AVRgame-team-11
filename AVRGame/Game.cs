@@ -21,7 +21,7 @@ namespace AVRGame
         {
 
         }
-
+        //kiek koek kak kuk
         /// <summary>
         /// Here you can load all the content you need.
         /// Example: Load textures, sounds or texture effects
