@@ -6,6 +6,8 @@ namespace AVRGame
 {
     public class Game : GameLib.AVRGame
     {
+        ball ball;
+
         RasterizerState rasterizerState = new RasterizerState() { MultiSampleAntiAlias = true };
         public Game()
         {
@@ -19,7 +21,7 @@ namespace AVRGame
         /// </summary>
         protected override void __Initialize()
         {
-
+            ball = new ball();
         }
         /// <summary>
         /// Here you can load all the content you need.
@@ -62,7 +64,7 @@ namespace AVRGame
             spriteBatch.Begin(rasterizerState: this.rasterizerState, transformMatrix: Camera.TransformMatrix);
 
             //Place your world drawing logic here.
-
+            ball.Draw(spriteBatch, gameTime);
             //End the spritebatch
             spriteBatch.End();
         }
@@ -77,6 +79,7 @@ namespace AVRGame
             spriteBatch.Begin(rasterizerState: this.rasterizerState);
 
             //Place your non-camera related drawing logic here, for example the UI
+            ball.Draw(spriteBatch, gameTime);
 
             spriteBatch.End();
         }
