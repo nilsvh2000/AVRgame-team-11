@@ -6,6 +6,8 @@ namespace AVRGame
 {
     public class Game : GameLib.AVRGame
     {
+        private Texture2D _meteor;
+        
         ball ball;
 
         RasterizerState rasterizerState = new RasterizerState() { MultiSampleAntiAlias = true };
@@ -29,6 +31,7 @@ namespace AVRGame
         /// </summary>
         protected override void __LoadContent()
         {
+            _meteor = Content.Load<Texture2D>("Meteor V1");
         }
 
         /// <summary>
@@ -62,6 +65,10 @@ namespace AVRGame
 
             //Begin your spritebatch.
             spriteBatch.Begin(rasterizerState: this.rasterizerState, transformMatrix: Camera.TransformMatrix);
+
+
+            //laad de meteor in als plaaje
+            spriteBatch.Draw(_meteor, new Rectangle(10, 10, 500, 500), Color.White);
 
             //Place your world drawing logic here.
             ball.Draw(spriteBatch, gameTime);
