@@ -7,7 +7,11 @@ namespace AVRGame
     public class Game : GameLib.AVRGame
     {
         private Texture2D _meteor;
-        
+        private Texture2D _spaceship;
+
+        public int XPosMeteor;
+        public int YPosMeteor;
+
         ball ball;
 
         RasterizerState rasterizerState = new RasterizerState() { MultiSampleAntiAlias = true };
@@ -15,6 +19,7 @@ namespace AVRGame
         {
             this.ScreenWidth = 800;
             this.ScreenHeight = 600;
+
         }
 
         /// <summary>
@@ -24,6 +29,8 @@ namespace AVRGame
         protected override void __Initialize()
         {
             ball = new ball();
+            XPosMeteor= -700;
+            YPosMeteor= -400;
         }
         /// <summary>
         /// Here you can load all the content you need.
@@ -32,6 +39,7 @@ namespace AVRGame
         protected override void __LoadContent()
         {
             _meteor = Content.Load<Texture2D>("Meteor V2");
+            _spaceship = Content.Load<Texture2D>("spaceship");
         }
 
         /// <summary>
@@ -49,7 +57,8 @@ namespace AVRGame
         /// <param name="gameTime"></param>
         protected override void __Update(GameTime gameTime)
         {
-
+            XPosMeteor++;
+            YPosMeteor++;
         }
 
         /// <summary>
@@ -67,8 +76,9 @@ namespace AVRGame
             spriteBatch.Begin(rasterizerState: this.rasterizerState, transformMatrix: Camera.TransformMatrix);
 
 
-            //laad de meteor in als plaaje
-            spriteBatch.Draw(_meteor, new Rectangle(0, 0, 200, 200), Color.White);
+            //laad de dingen in als plaaje
+            spriteBatch.Draw(_meteor, new Rectangle(XPosMeteor, YPosMeteor, 589, 299), Color.White);
+            spriteBatch.Draw(_spaceship, new Rectangle(-700, -400, 900, 511), Color.White);
 
             //Place your world drawing logic here.
             ball.Draw(spriteBatch, gameTime);
