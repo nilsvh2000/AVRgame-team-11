@@ -31,7 +31,7 @@ namespace AVRGame
         /// </summary>
         protected override void __LoadContent()
         {
-            _meteor = Content.Load<Texture2D>("Meteor V1");
+            _meteor = Content.Load<Texture2D>("Meteor V2");
         }
 
         /// <summary>
