@@ -68,7 +68,7 @@ namespace AVRGame
 
 
             //laad de meteor in als plaaje
-            spriteBatch.Draw(_meteor, new Rectangle(10, 10, 500, 500), Color.White);
+            spriteBatch.Draw(_meteor, new Rectangle(0, 0, 200, 200), Color.White);
 
             //Place your world drawing logic here.
             ball.Draw(spriteBatch, gameTime);
