@@ -112,7 +112,7 @@ using System.Threading.Tasks;
 
 namespace Worm
 {
-    class Sprite
+    class Metreoriet
     {
 
     }
