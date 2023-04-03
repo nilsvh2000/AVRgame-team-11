@@ -1,4 +1,5 @@
-﻿using GameLib;
+﻿
+/*using GameLib;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -12,7 +13,6 @@ namespace AVRGame
         public int XPosMeteor;
         public int YPosMeteor;
 
-        ball ball;
 
         RasterizerState rasterizerState = new RasterizerState() { MultiSampleAntiAlias = true };
         public Game()
@@ -28,7 +28,7 @@ namespace AVRGame
         /// </summary>
         protected override void __Initialize()
         {
-            ball = new ball();
+         
             XPosMeteor= -700;
             YPosMeteor= -400;
         }
@@ -70,7 +70,7 @@ namespace AVRGame
         protected override void __DrawGame(SpriteBatch spriteBatch, GameTime gameTime)
         {
             //Refresh your frame, should not be deleted. Color can be changed.
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Green);
 
             //Begin your spritebatch.
             spriteBatch.Begin(rasterizerState: this.rasterizerState, transformMatrix: Camera.TransformMatrix);
@@ -81,7 +81,7 @@ namespace AVRGame
             spriteBatch.Draw(_spaceship, new Rectangle(-700, -400, 900, 511), Color.White);
 
             //Place your world drawing logic here.
-            ball.Draw(spriteBatch, gameTime);
+            
             //End the spritebatch
             spriteBatch.End();
         }
@@ -96,9 +96,24 @@ namespace AVRGame
             spriteBatch.Begin(rasterizerState: this.rasterizerState);
 
             //Place your non-camera related drawing logic here, for example the UI
-            ball.Draw(spriteBatch, gameTime);
-
             spriteBatch.End();
+
+            
         }
+    }
+}
+*/
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Worm
+{
+    class Sprite
+    {
+
     }
 }
