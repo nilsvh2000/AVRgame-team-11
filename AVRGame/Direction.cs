@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace AVRGame
 {
-    internal class Direction
+    enum Direction
     {
+        Up, 
+        Down,
+        Left,
+        Right,
+        None,
     }
 }
