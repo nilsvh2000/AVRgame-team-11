@@ -104,16 +104,47 @@ namespace AVRGame
 }
 */
 
+using GameLib;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Worm
 {
-    class Metreoriet
+    public class Meteoriet
     {
+        GraphicsDeviceManager graphics;
+        SpriteBatch spriteBatch;
+        Rectangle screen;
+        Random rnd;
+        int screenWidth = 400;
+        int screenHeight = 400;
+        int wormPartSize = 20;
 
+        public Game()
+        {
+            graphics = new GraphicsDeviceManager(this);
+            Content.RootDirectory - "Content";
+            graphics.PreferredBackBufferWidth = screenWidth;
+            graphics.PreferredBackBufferHeight = screenHeight;
+            screen = new Rectangle(0, 0, screenWidth, screenHeight);
+            rnd = new Random();
+        }
+
+        protected override void Initialize()
+        {
+            base.Initialize();
+        }
+
+        protected override void LoadContent()
+        {
+            spriteBatch = new SpriteBatch(GraphicsDevice);
+        }
+
+        protected override void UnloadContent()
+        {
+
+        }
     }
 }
