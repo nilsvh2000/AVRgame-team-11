@@ -56,17 +56,17 @@ namespace AVRGame
                 if (direction != Direction.Left)
                     direction = Direction.Right;
         }
-       
+
         private void Teleporation()
         {
             if (position.X < 0)
                 position.X = screen.Width - texture.Width;
-            if(position.X > screen.Width - texture.Width)
+            if (position.X > screen.Width - texture.Width)
                 position.X = 0;
-            if(position.Y < 0)
+            if (position.Y < 0)
                 position.Y = screen.Height - texture.Height;
-            if(position.Y > screen.Height - texture.Height)
-                position.Y= 0;
+            if (position.Y > screen.Height - texture.Height)
+                position.Y = 0;
         }
     }
 }

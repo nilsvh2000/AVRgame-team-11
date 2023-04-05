@@ -118,6 +118,9 @@ namespace Worm
         SpriteBatch spriteBatch;
         Rectangle screen;
         Random rnd;
+        Meteoriet meteoriet;
+
+
         int screenWidth = 400;
         int screenHeight = 400;
         int wormPartSize = 20;
@@ -140,6 +143,11 @@ namespace Worm
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            meteoriet = new Meteoriet(Content.Load<Texture2D>("Meteor V2 beset"), new Vector2
+                (rnd.Next(0,(screenWidth/wormPartSize)*wormPartSize), 
+                    rnd.Next(0, screenHeight/wormPartSize)*wormPartSize)), Direction.None);
+
         }
 
         protected override void UnloadContent()
