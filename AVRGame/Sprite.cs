@@ -21,8 +21,8 @@ namespace AVRGame
 
         public Direction Direction
         {
-            get { return position; }
-            set { position = value; }
+            get { return direction; }
+            set { direction = value; }
         }
 
         public Rectangle SpriteBox { get { return new Rectangle((int)position.X, 
