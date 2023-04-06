@@ -17,7 +17,7 @@ namespace AVRGame
             set { position = value; }
         }
 
-        private Direction direction;
+        protected Direction direction;
 
         public Direction Direction
         {
