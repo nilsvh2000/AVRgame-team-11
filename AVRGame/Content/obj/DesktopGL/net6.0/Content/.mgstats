@@ -1,2 +1,5 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/nilsv/Source/Repos/2223_Team11/AVRGame/Content/wormhead.png","C:/Users/nilsv/Source/Repos/2223_Team11/AVRGame/Content/bin/DesktopGL/Content/wormhead.xnb","TextureProcessor","Texture2DContent",268,1685,0,4699544
+"C:/Users/Pepijn/source/repos/2223_Team11/AVRGame/Content/Meteor V2 beste.png","C:/Users/Pepijn/source/repos/2223_Team11/AVRGame/Content/bin/DesktopGL/Content/Meteor V2 beste.xnb","TextureProcessor","Texture2DContent",465,1685,0.1589467
+"C:/Users/Pepijn/source/repos/2223_Team11/AVRGame/Content/spaceship.png","C:/Users/Pepijn/source/repos/2223_Team11/AVRGame/Content/bin/DesktopGL/Content/spaceship.xnb","TextureProcessor","Texture2DContent",33231,1843285,0.04109
+"C:/Users/Pepijn/source/repos/2223_Team11/AVRGame/Content/wormbody.png","C:/Users/Pepijn/source/repos/2223_Team11/AVRGame/Content/bin/DesktopGL/Content/wormbody.xnb","TextureProcessor","Texture2DContent",231,1685,0.001928
+"C:/Users/Pepijn/source/repos/2223_Team11/AVRGame/Content/wormhead.png","C:/Users/Pepijn/source/repos/2223_Team11/AVRGame/Content/bin/DesktopGL/Content/wormhead.xnb","TextureProcessor","Texture2DContent",268,1685,0.0020265
