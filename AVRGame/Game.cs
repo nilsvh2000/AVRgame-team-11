@@ -85,7 +85,7 @@ namespace AVRGame
                 (rnd.Next(0, (screenWidth / wormPartSize) * wormPartSize),
                     rnd.Next(0, screenHeight / wormPartSize) * wormPartSize);
 
-                WormPart tail = new WormPart(Content.Load<Texture2D>("wormbody"), 
+                WormPart tail = new WormPart(Content.Load<Texture2D>("wormbody"),
                     new Vector2(wormParts[wormParts.Count-1].Position.X,
                     wormParts[wormParts.Count-1].Position.Y),
                     wormParts[wormParts.Count-1].Direction, screen);
