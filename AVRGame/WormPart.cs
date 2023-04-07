@@ -12,8 +12,8 @@ namespace AVRGame
 {
     class WormPart : Sprite
     {
-        public WormPart(Texture2D texture, Vector2 position, Direction direction)
-            : base(texture, position, direction)
+        public WormPart(Texture2D texture, Vector2 position, Direction direction, Rectangle screen)
+            : base(texture, position, direction, screen)
         {
         }
 

@@ -27,11 +27,12 @@ namespace AVRGame
         public Rectangle SpriteBox { get { return new Rectangle((int)position.X, 
             (int)position.Y, texture.Width, texture.Height); } }
     
-        public Sprite(Texture2D texture, Vector2 position, Direction direction)
+        public Sprite(Texture2D texture, Vector2 position, Direction direction, Rectangle screen)
         {
             this.texture = texture;
             this.position = position;
             this.direction = direction;
+            this.screen = screen;
         }
 
         public virtual void Update(GameTime gameTime)

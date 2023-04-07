@@ -10,8 +10,8 @@ namespace AVRGame
 {
      class Meteoriet : Sprite
     {
-        public Meteoriet(Texture2D texture, Vector2 position, Direction direction) 
-            : base(texture, position, direction)
+        public Meteoriet(Texture2D texture, Vector2 position, Direction direction, Rectangle screen) 
+            : base(texture, position, direction, screen)
         {
 
         }
