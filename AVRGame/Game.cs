@@ -20,6 +20,8 @@ namespace AVRGame
         int screenHeight = 400;
         int wormPartSize = 20;
 
+        float timer = 0;
+        float delay = 200;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -53,8 +55,14 @@ namespace AVRGame
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            wormPart.Update(gameTime);
-            wormPart.InputKeyboard();
+            timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+
+            if (timer > delay)
+            {
+                timer = 0;
+                wormPart.Update(gameTime);
+                wormPart.InputKeyboard();
+            }
 
             base.Update(gameTime);
         }
