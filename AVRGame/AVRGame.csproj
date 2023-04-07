@@ -33,7 +33,7 @@
 	</Target>
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
 		<ItemGroup>
-			<ContentFiles Include="$(SolutionDir)Dll\Content\*.*"/>
+			<ContentFiles Include="$(SolutionDir)Dll\Content\*.*" />
 		</ItemGroup>
 		<Copy SourceFiles="@(ContentFiles)" DestinationFolder="$(OutDir)Content"></Copy>
 	</Target>

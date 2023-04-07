@@ -10,10 +10,9 @@ namespace AVRGame
 {
      class Meteor : Sprite
     {
-        public Meteor(Texture2D texture, Vector2 position, Direction direction) 
-            : base(texture, position, direction)
+        public Meteor(Texture2D texture, Vector2 position, Direction direction, Rectangle screeen) 
+            : base(texture, position, direction, screen)
         {
-
         }
     }
 }
