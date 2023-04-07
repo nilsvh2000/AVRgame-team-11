@@ -8,7 +8,6 @@ namespace AVRGame
     {
         protected Texture2D texture;
         protected Rectangle screen;
-
         protected Vector2 position;
 
         public Vector2 Position
@@ -17,12 +16,12 @@ namespace AVRGame
             set { position = value; }
         }
 
-        private Direction direction;
+        protected Direction direction;
 
         public Direction Direction
         {
-            get { return position; }
-            set { position = value; }
+            get { return direction; }
+            set { direction = value; }
         }
 
         public Rectangle SpriteBox { get { return new Rectangle((int)position.X, 
