@@ -1,3 +1,3 @@
 ﻿
-using var game = new SnakeGame.Game();
-object value = game.Run();
+using var game = new AVRGame.Game1();
+game.Run();
