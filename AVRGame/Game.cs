@@ -64,7 +64,7 @@ namespace AVRGame
             GraphicsDevice.Clear(Color.Black);
             spriteBatch.Begin();
             meteoriet.Draw(spriteBatch);
-            wormpart.Draw(spriteBatch);
+            wormPart.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
         }
