@@ -43,10 +43,9 @@ namespace AVRGame
                 (rnd.Next(0,(screenWidth/wormPartSize)*wormPartSize), 
                     rnd.Next(0, screenHeight/wormPartSize)*wormPartSize)),Direction.None, screen);
 
-            wormPart = new WormPart(Content.Load<Texture2D>("later invullen"), new Vector2
+            wormPart = new WormPart(Content.Load<Texture2D>("wormbody"), new Vector2
                 (rnd.Next(0, (screenWidth / wormPartSize) * wormPartSize),
                     rnd.Next(0, screenHeight / wormPartSize) * wormPartSize)), Direction.Right, screen);
-                //sprite van Slang moet nog worden toegevoegd
         }
 
         protected override void Update(GameTime gameTime)
