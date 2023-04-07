@@ -41,11 +41,11 @@ namespace AVRGame
 
             meteoriet = new Meteoriet(Content.Load<Texture2D>("Meteor V2 beste"), new Vector2
                 (rnd.Next(0,(screenWidth/wormPartSize)*wormPartSize), 
-                    rnd.Next(0, screenHeight/wormPartSize)*wormPartSize)),Direction.None, screen);
+                    rnd.Next(0, screenHeight/wormPartSize)*wormPartSize),Direction.None, screen);
 
             wormPart = new WormPart(Content.Load<Texture2D>("wormbody"), new Vector2
                 (rnd.Next(0, (screenWidth / wormPartSize) * wormPartSize),
-                    rnd.Next(0, screenHeight / wormPartSize) * wormPartSize)), Direction.Right, screen);
+                    rnd.Next(0, screenHeight / wormPartSize) * wormPartSize), Direction.Right, screen);
         }
 
         protected override void Update(GameTime gameTime)
