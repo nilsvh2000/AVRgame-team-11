@@ -49,7 +49,7 @@ namespace AVRGame
 
             wormParts = new List<WormPart>();
 
-            head = new WormPart(Content.Load<Texture2D>("wormbody"), new Vector2
+            head = new WormPart(Content.Load<Texture2D>("wormhead"), new Vector2
                 (rnd.Next(0, (screenWidth / wormPartSize) * wormPartSize),
                     rnd.Next(0, screenHeight / wormPartSize) * wormPartSize), Direction.Right, screen);
 
