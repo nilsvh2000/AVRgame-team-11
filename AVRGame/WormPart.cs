@@ -12,7 +12,7 @@ namespace AVRGame
 {
     class WormPart : Sprite
     {
-        public Meteor(Texture2D texture, Vector2 position, Direction direction)
+        public WormPart(Texture2D texture, Vector2 position, Direction direction)
             : base(texture, position, direction)
         {
         }
@@ -36,10 +36,13 @@ namespace AVRGame
                 case Direction.None: 
                     break;
             }
+            Teleportation();
+
+
             base.Update(gameTime);
         }
 
-        Teleportation();
+        
 
         public void InputKeyboard()
         {
@@ -56,17 +59,17 @@ namespace AVRGame
                 if (direction != Direction.Left)
                     direction = Direction.Right;
         }
-       
-        private void Teleporation()
+
+        private void Teleportation()
         {
             if (position.X < 0)
                 position.X = screen.Width - texture.Width;
-            if(position.X > screen.Width - texture.Width)
+            if (position.X > screen.Width - texture.Width)
                 position.X = 0;
-            if(position.Y < 0)
+            if (position.Y < 0)
                 position.Y = screen.Height - texture.Height;
-            if(position.Y > screen.Height - texture.Height)
-                position.Y= 0;
+            if (position.Y > screen.Height - texture.Height)
+                position.Y = 0;
         }
     }
 }
