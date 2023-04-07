@@ -15,7 +15,7 @@ namespace AVRGame
         Rectangle screen;
         Random rnd;
         Meteoriet meteoriet;
-        WormPart head, tail;    
+        WormPart head, tail;
         List<WormPart> wormParts;
 
         int screenWidth = 400;
