@@ -12,11 +12,12 @@ namespace AVRGame
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Rectangle screen;
+        Rectangle screen;   
         Random rnd;
         Meteoriet meteoriet;
         WormPart head, tail;    
         List<WormPart> wormParts;
+        
 
         int screenWidth = 400;
         int screenHeight = 400;
@@ -42,6 +43,8 @@ namespace AVRGame
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+           
 
             meteoriet = new Meteoriet(Content.Load<Texture2D>("Meteor V2 beste"), new Vector2
                 (rnd.Next(0,(screenWidth/wormPartSize)*wormPartSize), 
@@ -122,9 +125,11 @@ namespace AVRGame
         }
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Black);
+            
 
             spriteBatch.Begin();
+
+            GraphicsDevice.Clear(Color.Black);
 
             meteoriet.Draw(spriteBatch);
 
