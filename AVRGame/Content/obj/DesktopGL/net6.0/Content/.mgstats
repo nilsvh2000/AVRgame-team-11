@@ -1,1 +1,4 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/Pepijn/Source/Repos/2223_Team11/AVRGame/Content/Meteor V2 beste.png","C:/Users/Pepijn/Source/Repos/2223_Team11/AVRGame/Content/bin/DesktopGL/Content/Meteor V2 beste.xnb","TextureProcessor","Texture2DContent",465,1685,0.1871941
+"C:/Users/Pepijn/Source/Repos/2223_Team11/AVRGame/Content/spaceship.png","C:/Users/Pepijn/Source/Repos/2223_Team11/AVRGame/Content/bin/DesktopGL/Content/spaceship.xnb","TextureProcessor","Texture2DContent",33231,1843285,0.0398624
+"C:/Users/Pepijn/Source/Repos/2223_Team11/AVRGame/Content/wormbody.png","C:/Users/Pepijn/Source/Repos/2223_Team11/AVRGame/Content/bin/DesktopGL/Content/wormbody.xnb","TextureProcessor","Texture2DContent",231,1685,0.0019313
