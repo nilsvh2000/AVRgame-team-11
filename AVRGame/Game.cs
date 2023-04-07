@@ -22,6 +22,7 @@ namespace AVRGame
         int screenWidth = 400;
         int screenHeight = 400;
         int wormPartSize = 20;
+        bool dood = false;
 
         float timer = 0;
         float delay = 200;
@@ -65,6 +66,8 @@ namespace AVRGame
                 Exit();
 
             timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            if (dood == false)
+            { 
 
             if (timer > delay)
             {
@@ -82,44 +85,53 @@ namespace AVRGame
 
                 wormParts[0].InputKeyboard();
 
-                if (wormParts[0].SpriteBox.Intersects(meteoriet.SpriteBox))
-                {
-                    meteoriet.Position = new Vector2
-                (rnd.Next(0, (screenWidth / wormPartSize) * wormPartSize),
-                    rnd.Next(0, screenHeight / wormPartSize) * wormPartSize);
-
-                WormPart tail = new WormPart(Content.Load<Texture2D>("wormbody"),
-                    new Vector2(wormParts[wormParts.Count-1].Position.X,
-                    wormParts[wormParts.Count-1].Position.Y),
-                    wormParts[wormParts.Count-1].Direction, screen);
-
-                switch (wormParts[wormParts.Count - 1].Direction)
+                    if (wormParts[0].SpriteBox.Intersects(meteoriet.SpriteBox))
                     {
-                        case Direction.Up:
-                            tail.Position = new Vector2(tail.Position.X, 
-                                tail.Position.Y + wormPartSize); 
-                            break;
-                        case Direction.Down:
-                            tail.Position = new Vector2(tail.Position.X,
-                                tail.Position.Y - wormPartSize);
+                        meteoriet.Position = new Vector2
+                    (rnd.Next(0, (screenWidth / wormPartSize) * wormPartSize),
+                        rnd.Next(0, screenHeight / wormPartSize) * wormPartSize);
 
-                            break;
-                        case Direction.Left:
-                            tail.Position = new Vector2(tail.Position.X + wormPartSize,
-                                tail.Position.Y);
-                            break;
-                        case Direction.Right:
-                            tail.Position = new Vector2(tail.Position.X - wormPartSize,
-                                tail.Position.Y);
-                            break;
-                        case Direction.None:
-                            break;
+                        WormPart tail = new WormPart(Content.Load<Texture2D>("wormbody"),
+                            new Vector2(wormParts[wormParts.Count - 1].Position.X,
+                            wormParts[wormParts.Count - 1].Position.Y),
+                            wormParts[wormParts.Count - 1].Direction, screen);
+
+                        switch (wormParts[wormParts.Count - 1].Direction)
+                        {
+                            case Direction.Up:
+                                tail.Position = new Vector2(tail.Position.X,
+                                    tail.Position.Y + wormPartSize);
+                                break;
+                            case Direction.Down:
+                                tail.Position = new Vector2(tail.Position.X,
+                                    tail.Position.Y - wormPartSize);
+
+                                break;
+                            case Direction.Left:
+                                tail.Position = new Vector2(tail.Position.X + wormPartSize,
+                                    tail.Position.Y);
+                                break;
+                            case Direction.Right:
+                                tail.Position = new Vector2(tail.Position.X - wormPartSize,
+                                    tail.Position.Y);
+                                break;
+                            case Direction.None:
+                                break;
+                        }
+
+                        wormParts.Add(tail);
                     }
+                    for (int i = 1; i < wormParts.Count - 1; i++)
+                    {
+                        if (wormParts[0].SpriteBox.Intersects(wormParts[i].SpriteBox))
+                            dood = true;
+                    }
+                    if (dood)
+                        Exit();
 
-                    wormParts.Add(tail);
                 }
             }
-
+        
 
             base.Update(gameTime);
         }
