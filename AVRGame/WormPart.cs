@@ -70,6 +70,7 @@ namespace AVRGame
                 position.Y = screen.Height - texture.Height;
             if (position.Y > screen.Height - texture.Height)
                 position.Y = 0;
+
         }
     }
 }

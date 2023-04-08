@@ -15,7 +15,7 @@ namespace AVRGame
         Rectangle screen;   
         Random rnd;
         Meteoriet meteoriet;
-        WormPart head, tail;
+        WormPart head;
         List<WormPart> wormParts;
         
 
