@@ -13,7 +13,6 @@ namespace AVRGame
         public Meteoriet(Texture2D texture, Vector2 position, Direction direction, Rectangle screen) 
             : base(texture, position, direction, screen)
         {
-
         }
     }
 }

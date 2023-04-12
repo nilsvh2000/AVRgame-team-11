@@ -49,7 +49,7 @@ namespace AVRGame
 
             meteoriet = new Meteoriet(Content.Load<Texture2D>("Meteor V2 beste"), new Vector2
                 (rnd.Next(0,(screenWidth/wormPartSize)*wormPartSize), 
-                    rnd.Next(0, screenHeight/wormPartSize)*wormPartSize),Direction.None, screen);
+                    rnd.Next(0, screenHeight/wormPartSize)*wormPartSize)), Direction.None);
 
             wormParts = new List<WormPart>();
 
@@ -154,5 +154,31 @@ namespace AVRGame
 
             base.Draw(gameTime);
         }
+
+        protected override void Update(GameTime gameTime)
+        {
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            {
+                Exit();
+            }
+
+            base.Update(gameTime);
+        }
+
+        protected override void Draw(GameTime gameTime)
+        {
+            GraphicsDevice.Clear(Color.Black);
+
+            spriteBatch.Begin();
+
+            Meteoriet.Draw(spriteBatch);
+
+            spriteBatch.End();
+
+            base.Draw(gameTime);
+        }
+    
     }
+
 }
+
