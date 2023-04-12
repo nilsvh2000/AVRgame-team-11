@@ -88,7 +88,7 @@ namespace AVRGame
                     if (wormParts[0].SpriteBox.Intersects(meteoriet.SpriteBox))
                     {
                         meteoriet.Position = new Vector2
-                    (rnd.Next(0, (screenWidth / wormPartSize) * wormPartSize),
+                    (rnd.Next(20, (screenWidth - wormPartSize) + 0),
                         rnd.Next(0, screenHeight / wormPartSize) * wormPartSize);
 
                         WormPart tail = new WormPart(Content.Load<Texture2D>("wormbody"),
