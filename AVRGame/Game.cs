@@ -12,12 +12,12 @@ namespace AVRGame
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Rectangle screen;   
+        Rectangle screen;
         Random rnd;
         Meteoriet meteoriet;
         WormPart head;
         List<WormPart> wormParts;
-        
+
 
         int screenWidth = 400;
         int screenHeight = 400;
@@ -45,11 +45,11 @@ namespace AVRGame
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-           
+
 
             meteoriet = new Meteoriet(Content.Load<Texture2D>("Meteor V2 beste"), new Vector2
-                (rnd.Next(0,(screenWidth/wormPartSize)*wormPartSize), 
-                    rnd.Next(0, screenHeight/wormPartSize)*wormPartSize)), Direction.None);
+                (rnd.Next(0, (screenWidth / wormPartSize) * wormPartSize),
+                    rnd.Next(0, screenHeight / wormPartSize) * wormPartSize), Direction.None, screen);
 
             wormParts = new List<WormPart>();
 
@@ -67,23 +67,23 @@ namespace AVRGame
 
             timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             if (dood == false)
-            { 
-
-            if (timer > delay)
             {
-                timer = 0;
-                
-                foreach (WormPart s in wormParts)
-                {
-                    s.Update(gameTime);
-                }
 
-                for(int i = wormParts.Count-1; i > 0; i--)
+                if (timer > delay)
                 {
-                    wormParts[i].Direction = wormParts[i - 1].Direction;
-                }
+                    timer = 0;
 
-                wormParts[0].InputKeyboard();
+                    foreach (WormPart s in wormParts)
+                    {
+                        s.Update(gameTime);
+                    }
+
+                    for (int i = wormParts.Count - 1; i > 0; i--)
+                    {
+                        wormParts[i].Direction = wormParts[i - 1].Direction;
+                    }
+
+                    wormParts[0].InputKeyboard();
 
                     if (wormParts[0].SpriteBox.Intersects(meteoriet.SpriteBox))
                     {
@@ -131,13 +131,13 @@ namespace AVRGame
 
                 }
             }
-        
+
 
             base.Update(gameTime);
         }
         protected override void Draw(GameTime gameTime)
         {
-            
+
 
             spriteBatch.Begin();
 
@@ -154,31 +154,7 @@ namespace AVRGame
 
             base.Draw(gameTime);
         }
-
-        protected override void Update(GameTime gameTime)
-        {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-            {
-                Exit();
-            }
-
-            base.Update(gameTime);
-        }
-
-        protected override void Draw(GameTime gameTime)
-        {
-            GraphicsDevice.Clear(Color.Black);
-
-            spriteBatch.Begin();
-
-            Meteoriet.Draw(spriteBatch);
-
-            spriteBatch.End();
-
-            base.Draw(gameTime);
-        }
-    
     }
-
 }
+
 
