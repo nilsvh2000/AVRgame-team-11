@@ -8,9 +8,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace AVRGame
 {
-     class Meteor : Sprite
+     class Meteoriet : Sprite
     {
-        public Meteor(Texture2D texture, Vector2 position, Direction direction, Rectangle screeen) 
+        public Meteoriet(Texture2D texture, Vector2 position, Direction direction, Rectangle screen) 
             : base(texture, position, direction, screen)
         {
         }

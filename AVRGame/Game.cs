@@ -110,6 +110,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
+using System.Reflection.PortableExecutable;
 
 namespace AVRGame
 {
@@ -145,17 +146,28 @@ namespace AVRGame
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-
             meteoriet = new Meteoriet(Content.Load<Texture2D>("Meteor V2 beste"), new Vector2
                 (rnd.Next(0,(screenWidth/wormPartSize)*wormPartSize), 
-                    rnd.Next(0, screenHeight/wormPartSize)*wormPartSize),Direction.None);
-
+                    rnd.Next(0, screenHeight/wormPartSize)*wormPartSize)), Direction.None);
 
         }
 
-        protected override void UnloadContent()
+        protected override void Update(GameTime gameTime)
         {
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            {
+                Exit();
+            }
 
+            base.Update(gameTime);
+        }
+        protected override void Draw(GameTime gameTime)
+        {
+            GraphicsDevice.Clear(Color.Black);
+            spriteBatch.Begin();
+            meteoriet.Draw(spriteBatch);
+            spriteBatch.End();
+            base.Draw(gameTime);
         }
 
         protected override void Update(GameTime gameTime)
