@@ -22,7 +22,7 @@ namespace AVRGame
         int screenWidth = 400;
         int screenHeight = 400;
         int wormPartSize = 20;
-        bool dood = false;
+        bool death = false;
 
         float timer = 0;
         float delay = 200;
@@ -66,7 +66,7 @@ namespace AVRGame
                 Exit();
 
             timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            if (dood == false)
+            if (death == false)
             {
 
                 if (timer > delay)
@@ -124,13 +124,14 @@ namespace AVRGame
                     for (int i = 1; i < wormParts.Count - 1; i++)
                     {
                         if (wormParts[0].SpriteBox.Intersects(wormParts[i].SpriteBox))
-                            dood = true;
+                            death = true;
                     }
-                    if (dood)
-                        Exit();
+
 
                 }
+
             }
+            else Exit();
 
 
             base.Update(gameTime);
